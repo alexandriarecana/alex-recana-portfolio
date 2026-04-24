@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Resume — Alex Recana</title>
+<meta name="description" content="Download or view Alex Recana's resume." />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .resume-wrap {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+  .resume-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 800px) { .resume-head { grid-template-columns: 1fr; gap: 1.5rem; } }
+  .resume-head h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    margin: 0;
+  }
+  .resume-head h1 em { color: var(--tangerine); font-style: italic; }
+  .resume-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.35rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1rem;
+    background-image: none;
+    transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+  }
+  .btn:hover { background: var(--tangerine); color: #fff; border-color: var(--tangerine); transform: translate(0,-2px); }
+  .btn--outline { background: transparent; color: var(--ink); }
+  .btn--outline:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .resume-frame {
+    width: 100%;
+    min-height: 85vh;
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    background: #fff;
+    display: block;
+  }
+  .resume-fallback {
+    padding: 3rem;
+    text-align: center;
+    border: 2px dashed var(--ink);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--tangerine) 10%, var(--paper));
+    font-family: var(--mono);
+    color: var(--muted);
+  }
+  .resume-fallback strong { color: var(--ink); display: block; margin-bottom: 0.5rem; font-family: var(--sans); font-size: 1.05rem; }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">Alexandria&nbsp;Recana<span class="dot"></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Work</a>
+      <a href="life.html">Life</a>
+      <a href="about.html">About</a>
+      <a href="resume.html" aria-current="page">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap resume-wrap">
+
+  <div class="resume-head">
+    <h1><em>Resume</em><br />/ CV</h1>
+    <div>
+      <p style="margin:0 0 1.5rem; max-width:40ch; color:var(--muted);">Download the PDF or scroll down to read the full version embedded below.</p>
+      <div class="resume-actions">
+        <a class="btn" href="assets/AlexRecanaResume.2025.pdf" download>Download PDF ↓</a>
+        <a class="btn btn--outline" href="assets/AlexRecanaResume.2025.pdf" target="_blank" rel="noopener">Open in new tab ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Embedded resume. Replace assets/alex-recana-resume.pdf with your actual file. -->
+  <object data="assets/AlexRecanaResume.2025.pdf" type="application/pdf" class="resume-frame" aria-label="Alex Recana resume">
+    <div class="resume-fallback">
+      <strong>Resume PDF not yet uploaded</strong>
+      Drop a file at <code>assets/alex-recana-resume.pdf</code> and refresh this page.
+      The download and "open in new tab" buttons above will start working automatically.
+    </div>
+  </object>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h4>Let's <em>talk</em>.</h4>
+      <p>Open to internships, new grad roles, and collaboration.</p>
+    </div>
+    <div>
+      <div class="contact-links">
+        <a href="mailto:alexandria.recana@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/alexandria-recana" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/alexandriarecana" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p style="margin-top:1.5rem; font-size:0.9rem; opacity:0.85; line-height:1.6;">
+        <strong style="color:var(--butter);">Email</strong> for fastest replies ·
+        <strong style="color:var(--butter);">LinkedIn</strong> for work history ·
+        <strong style="color:var(--butter);">GitHub</strong> for source code.
+      </p>
+    </div>
+    <p class="fine">© 2026 Alexandria Recana · Built with care at CU Boulder</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ultimate Hangman Web Game — Alex Recana</title>
+<meta name="description" content="A browser-based Hangman game built as a team project using HTML, CSS, JavaScript, and a shared Git workflow." />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-theme="sage">
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="../index.html" class="wordmark">Alexandria&nbsp;Recana<span class="dot"></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html">Work</a>
+      <a href="../life.html">Life</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="cs-head">
+    <div class="wrap">
+      <span class="eyebrow">Case 03 · 2024 · Team project</span>
+      <h1>Ultimate <em>Hangman</em> Web Game</h1>
+      <p class="summary">A browser-based Hangman game that lets players guess words through an interactive interface. Built as a small team using JavaScript, HTML, and CSS — with GitHub as our shared source of truth.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Game logic &amp; UI</dd></div>
+      <div><dt>Team</dt><dd>Classmates, split by feature</dd></div>
+      <div><dt>Stack</dt><dd>JavaScript · HTML · CSS · GitHub</dd></div>
+      <div><dt>When</dt><dd>2024</dd></div>
+    </dl>
+
+    <section class="cs-body">
+      <h2>Goal</h2>
+      <div class="body-copy">
+        <p>Build something small, simple, and fun — and use it as a proving ground for collaborative software development. The point wasn't really Hangman. The point was getting comfortable working in a shared codebase: branches, pull requests, reviewing each other's code, merging cleanly.</p>
+        <figure>
+          <img 
+            src="../assets/gameplay.png" 
+            alt="Hangman Game"
+            style="width: 100%; display: block; object-fit: cover;"
+          />
+          <figcaption>Fig. 01 — the game in play.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>How we split the work</h2>
+      <div class="body-copy">
+        <p>We broke the game into three pieces — game logic (state, win/lose, word selection), UI (keyboard, hangman drawing, letter feedback), and polish (animations, sound, styling). Each of us took one and then helped review the others.</p>
+        <h3>What I owned</h3>
+        <ul>
+          <li>Core game logic and state — including how guesses resolved against the hidden word.</li>
+          <li>UI wiring — connecting keyboard input to the visual state and rendering correct feedback for each guess.</li>
+          <li>Debugging edge cases (repeated letters, case sensitivity, end-game transitions).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>Collaboration</h2>
+      <div class="body-copy">
+        <p>This was my first real experience owning a feature branch in a team repo. I learned (the hard way) how to keep commits clean, write useful PR descriptions, and pull main before I started anything — the kind of thing you only internalize after your first painful merge conflict.</p>
+        <figure>
+          <img 
+            src="../assets/gameworkflow.png" 
+            alt="Hangman Workflow"
+            style="width: 100%; display: block; object-fit: cover;"
+          />
+          <figcaption>Fig. 02 — our Git workflow.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>Outcome &amp; reflection</h2>
+      <div class="body-copy">
+        <p>We shipped a working game and, more importantly, left the class with a working mental model of how real software teams collaborate. It's also where I started to think about small details in UI as a design problem — the keyboard, the feedback, the end-state — rather than just "frontend work." That habit stuck.</p>
+      </div>
+    </section>
+
+    <section class="cs-next">
+      <a href="project-2.html"><span class="label">Prev</span>← UI/UX Prototype</a>
+      <a href="../index.html"><span class="label">Back</span>All work ↗</a>
+    </section>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div><h4>Let's <em>talk</em>.</h4><p>Open to internships and new grad roles.</p></div>
+      <div>
+        <div class="contact-links">
+          <a href="mailto:alexandria.recana@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/alexandria-recana" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/alexandriarecana" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <p class="fine">© 2026 Alexandria Recana · Built with care at CU Boulder</p>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>

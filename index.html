@@ -1,82 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Recana | Senior Computer Science Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <div>
-          <p class="eyebrow">Alex Recana</p>
-          <h1>Senior Computer Science Student</h1>
-          <p class="subtitle">Building intuitive applications with clean design, modern web stacks, and practical engineering.</p>
-        </div>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Alex Recana — Portfolio</title>
+<meta name="description" content="Alex Recana — senior at CU Boulder studying Computer Science. Front-end development, UX design, and the places they meet." />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">Alexandria&nbsp;Recana<span class="dot"></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Work</a>
+      <a href="life.html">Life</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Portfolio · Alex Recana · Updated 2026</span>
+      <h1>Design and <em>code</em>, <span class="hl">together.</span></h1>
+      <p class="lede">I'm Alex Recana, a senior at CU Boulder studying Computer Science. I'm most curious about where front-end engineering meets UX design — building things that work well and feel good to use.</p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Front-end development <span class="star">●</span> UI/UX design <span class="star">●</span> Prototyping <span class="star">●</span> Research <span class="star">●</span> Computer architecture <span class="star">●</span> Digital storytelling <span class="star">●</span></span>
+      <span>Front-end development <span class="star">●</span> UI/UX design <span class="star">●</span> Prototyping <span class="star">●</span> Research <span class="star">●</span> Computer architecture <span class="star">●</span> Digital storytelling <span class="star">●</span></span>
+    </div>
+  </div>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected <em>projects</em></h2>
+        <p>Four projects from my coursework at CU Boulder and a study abroad program in London. Some are team projects, some solo; some are design-led, some are closer to the metal.</p>
       </div>
-    </header>
 
-    <main class="container">
-      <section id="about" class="section-card">
-        <h2>About Me</h2>
-        <p>Hi, I'm Alex Recana — a senior studying Computer Science with a passion for front-end development, full-stack systems, and creating polished user experiences.</p>
-        <p>I enjoy turning ideas into products, writing clean code, and collaborating on projects that solve real problems.</p>
-      </section>
+      <ol class="work-list">
+        <li class="work-item" style="--swatch-color: var(--tangerine);">
+          <a href="work/project-1.html">
+            <span class="num">01</span>
+            <span class="title">London Off-Season <em>Football Tales</em></span>
+            <span class="role">Front-end · Research · Study Abroad</span>
+            <span class="year">2025</span>
+          </a>
+        </li>
+        <li class="work-item" style="--swatch-color: var(--cobalt);">
+          <a href="work/project-2.html">
+            <span class="num">02</span>
+            <span class="title">UI/UX Design <em>Prototype</em></span>
+            <span class="role">Figma · Wireframes · User Flows</span>
+            <span class="year">2025</span>
+          </a>
+        </li>
+        <li class="work-item" style="--swatch-color: var(--sage);">
+          <a href="work/project-3.html">
+            <span class="num">03</span>
+            <span class="title">Ultimate <em>Hangman</em> Web Game</span>
+            <span class="role">JavaScript · Team · Git Workflow</span>
+            <span class="year">2024</span>
+          </a>
+        </li>
+        <li class="work-item" style="--swatch-color: var(--plum);">
+          <a href="#risc-v" aria-describedby="risc-v-desc">
+            <span class="num">04</span>
+            <span class="title">RISC-V <em>Processor</em></span>
+            <span class="role">SystemVerilog · Computer Architecture · In progress</span>
+            <span class="year">2026</span>
+          </a>
+        </li>
+      </ol>
+      <p id="risc-v-desc" style="margin-top:1.5rem; color:var(--muted); font-size:0.9rem;">↑ RISC-V project is still in progress — full writeup coming once the pipeline is verified.</p>
+    </div>
+  </section>
 
-      <section id="projects" class="section-card">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Project One</h3>
-            <p>A modern web app that connects students with campus resources, built with React and Firebase.</p>
-          </article>
-          <article class="project-card">
-            <h3>Project Two</h3>
-            <p>A command-line tool for automating data workflows, implemented in Python and deployed with Docker.</p>
-          </article>
-          <article class="project-card">
-            <h3>Project Three</h3>
-            <p>An intuitive mobile-friendly portfolio site with responsive design and performance-first best practices.</p>
-          </article>
+  <section class="section section--butter" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How I <em>work</em></h2>
+        <p>I'm drawn to problems where the interface and the implementation are the same decision. Good software is the kind your user never has to think about, and getting there means caring about both halves.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem;">
+        <div>
+          <span class="chip">01 · Understand</span>
+          <p style="margin-top:1rem; font-size:1.05rem; line-height:1.6;">Research, user flows, and asking what problem we're actually solving before touching a canvas or a file.</p>
         </div>
-      </section>
-
-      <section id="skills" class="section-card">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div>
-            <h3>Languages</h3>
-            <p>JavaScript, Python, Java, C++, SQL</p>
-          </div>
-          <div>
-            <h3>Web</h3>
-            <p>HTML, CSS, React, Node.js, Express</p>
-          </div>
-          <div>
-            <h3>Tools</h3>
-            <p>Git, Docker, VS Code, REST APIs, Firebase</p>
-          </div>
+        <div>
+          <span class="chip" style="background:var(--sage); color:#fff;">02 · Prototype</span>
+          <p style="margin-top:1rem; font-size:1.05rem; line-height:1.6;">Sketch, wireframe, or spin up a rough build fast. Iteration beats over-planning when you don't yet know what's hard.</p>
         </div>
-      </section>
+        <div>
+          <span class="chip" style="background:var(--rose); color:#fff;">03 · Ship &amp; learn</span>
+          <p style="margin-top:1rem; font-size:1.05rem; line-height:1.6;">Push to GitHub, pair with teammates, test with real users where I can, and come back with what I learned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section id="contact" class="section-card">
-        <h2>Contact</h2>
-        <p>If you'd like to connect or learn more about my work, feel free to reach out.</p>
-        <p>Email: <a href="mailto:alex.recana@example.com">alex.recana@example.com</a></p>
-      </section>
-    </main>
+  <footer class="site-foot">
+    <div class="wrap">
+      <div>
+        <h4>Let's <em>talk</em>.</h4>
+        <p>I'm open to internships, new grad roles, and collaboration on anything at the intersection of design and code. Email is the quickest way to reach me.</p>
+      </div>
+      <div>
+        <div class="contact-links">
+          <a href="mailto:alexandria.recana@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/alexandria-recana/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/alexandriarecana" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.9rem; opacity:0.85; line-height:1.6;">
+          <strong style="color:var(--butter);">Email</strong> for fastest replies ·
+          <strong style="color:var(--butter);">LinkedIn</strong> for work history and career updates ·
+          <strong style="color:var(--butter);">GitHub</strong> for source code from coursework and personal projects.
+        </p>
+      </div>
+      <p class="fine">© 2026 Alexandria Recana · Built with care at CU Boulder</p>
+    </div>
+  </footer>
 
-    <footer class="site-footer">
-      <p>© 2026 Alex Recana. Designed with simplicity and clarity.</p>
-    </footer>
+</main>
 
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
