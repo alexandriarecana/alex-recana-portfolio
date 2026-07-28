@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>RISC-V Processor — Alex Recana</title>
+<meta name="description" content="A 5-stage pipelined RISC-V CPU built incrementally in SystemVerilog, with hazard detection, forwarding, branch handling, and load/store support." />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-theme="plum">
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="../index.html" class="wordmark">Alexandria&nbsp;Recana<span class="dot"></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html">Work</a>
+      <a href="../life.html">Life</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="cs-head">
+    <div class="wrap">
+      <span class="eyebrow">Case 05 · 2026 · Solo, coursework</span>
+      <h1>RISC-V <em>Processor</em></h1>
+      <p class="summary">A 5-stage pipelined RISC-V CPU, built from scratch in SystemVerilog over a semester of Computer Organization — one phase at a time, from a single-cycle datapath up through hazard detection, forwarding, branching, and full load/store support.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Solo — individual coursework</dd></div>
+      <div><dt>Course</dt><dd>ECEN 3593 · Computer Organization, CU Boulder</dd></div>
+      <div><dt>Stack</dt><dd>SystemVerilog · RISC-V assembly · Icarus Verilog</dd></div>
+      <div><dt>When</dt><dd>Spring 2026</dd></div>
+    </dl>
+
+    <section class="cs-body">
+      <h2>What it is</h2>
+      <div class="body-copy">
+        <p>This is a RISC-V (RV32I) CPU implemented as a classic 5-stage pipeline — fetch, decode, execute, memory, writeback — built up in stages across the semester rather than all at once. Each phase added a real capability to a working processor: the base datapath and control logic first, then data hazard detection and forwarding, then branches and pipeline flushing on mispredicts, and finally full load and store instruction support.</p>
+        <p>Working incrementally on a single, continuously-running design meant every new phase had to slot into an existing pipeline without breaking what already worked — closer to how you'd extend a real CPU than a one-off assignment.</p>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>Load/store &amp; hazard handling</h2>
+      <div class="body-copy">
+        <p>The most recent phase added the full RV32I memory instruction set — <code>lw</code>, <code>lh</code>, <code>lhu</code>, <code>lb</code>, <code>lbu</code>, <code>sw</code>, <code>sh</code>, <code>sb</code> — which meant wiring a data memory into the memory stage, adding byte-enable addressing so the datapath could correctly read and write partial words, and sign-extending sub-word loads based on instruction type.</p>
+        <p>The harder half was hazard correctness: a load followed immediately by an instruction that depends on the loaded value can't be resolved through forwarding alone, since the data isn't available until the load reaches writeback. I implemented load-use hazard detection that compares the destination register of an in-flight load against the source registers being decoded, and on a match, stalls the pipeline for exactly one cycle — inserting a bubble and holding the PC and fetch/decode register — before resuming forwarding as normal.</p>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>Structure</h2>
+      <div class="body-copy">
+        <p>The design splits cleanly across pipeline stage modules (<code>fetch.sv</code>, <code>decode.sv</code>, <code>execute.sv</code>, <code>mem.sv</code>, <code>writeback.sv</code>) wired together in <code>cpu.sv</code>, with a register file, ALU, data memory, and a testbench (<code>system_tb.sv</code>) rounding out the system. Control signals — memory write enable, byte-enable width, load type, register writeback source — are set in decode and carried down the pipeline registers stage by stage, which keeps each module's responsibility narrow and makes the datapath easy to trace when debugging.</p>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>Verification</h2>
+      <div class="body-copy">
+        <p>Each phase shipped with hand-written RISC-V assembly test programs and documented expected register-file traces. I simulated the design in Icarus Verilog, diffed the actual register updates against expected output, and used waveform inspection to trace mismatches back to the responsible pipeline stage — the same debug loop you'd use on real hardware, just without the hardware.</p>
+      </div>
+    </section>
+
+    <section class="cs-body">
+      <h2>What I learned</h2>
+      <div class="body-copy">
+        <p>This was my first sustained hardware design project, and the biggest shift was learning to think in cycles and signals instead of sequential code — a stall, a flush, and a forwarding path all have to be correct <em>simultaneously</em>, every clock edge, with no room for the "run it again and see" debugging habits software lets you get away with. It also gave me a much more concrete sense of what a CPU is actually doing underneath every program I write.</p>
+      </div>
+    </section>
+
+    <section class="cs-next">
+      <a href="project-4.html"><span class="label">Prev</span>← Altis Ski Goggles</a>
+      <a href="../index.html"><span class="label">Back</span>All work ↗</a>
+    </section>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div><h4>Let's <em>talk</em>.</h4><p>Open to internships and new grad roles.</p></div>
+      <div>
+        <div class="contact-links">
+          <a href="mailto:alexandria.recana@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/alexandria-recana/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/alexandriarecana" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <p class="fine">© 2026 Alexandria Recana · Built with care at CU Boulder</p>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
